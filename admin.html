@@ -86,6 +86,64 @@ cursor:pointer;
 <p>Manage VIP Plans</p>
 <button class="vip">Edit VIP</button>
 </div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  updateDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyAOpoabdD3JmDWAv_4RSYCdRgeQOSJXztE",
+  authDomain: "instachat-1e7e1.firebaseapp.com",
+  projectId: "instachat-1e7e1",
+  storageBucket: "instachat-1e7e1.firebasestorage.app",
+  messagingSenderId: "786711648870",
+  appId: "1:786711648870:web:22fc0fae2897333e0faba7",
+  measurementId: "G-P2VQ69SPP8"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const userInput = document.querySelector("input");
+
+document.querySelector(".ban").onclick = async () => {
+  const uid = userInput.value.trim();
+
+  await updateDoc(doc(db, "users", uid), {
+    Banned: true
+  });
+
+  alert("User Banned");
+};
+
+document.querySelector(".vip").onclick = async () => {
+  const uid = userInput.value.trim();
+
+  await updateDoc(doc(db, "users", uid), {
+    vip: true
+  });
+
+  alert("VIP Activated");
+};
+
+document.querySelector(".coin").onclick = async () => {
+  const uid = userInput.value.trim();
+
+  const ref = doc(db, "users", uid);
+  const snap = await getDoc(ref);
+
+  let coins = snap.data().Coins || 0;
+
+  await updateDoc(ref, {
+    Coins: coins + 1000
+  });
+
+  alert("1000 Coins Added");
+};
+</script>
 </body>
 </html>
