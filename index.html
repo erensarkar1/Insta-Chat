@@ -3,74 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>InstaChat Ranking</title>
+<title>InstaChat Private Chat</title>
 
 <style>
 body{
 margin:0;
 font-family:Arial,sans-serif;
 background:linear-gradient(135deg,#5b4bff,#00c6ff);
+height:100vh;
+display:flex;
+flex-direction:column;
 color:white;
-text-align:center;
 }
 
 .header{
-padding:25px;
-font-size:35px;
-font-weight:bold;
-}
-
-.rank-card{
-background:rgba(255,255,255,.15);
-margin:15px;
-padding:20px;
-border-radius:20px;
-backdrop-filter:blur(10px);
-}
-
-.top1{
-border:3px solid gold;
-}
-
-.top2{
-border:3px solid silver;
-}
-
-.top3{
-border:3px solid #cd7f32;
-}
-
-.name{
-font-size:25px;
-font-weight:bold;
-margin-top:10px;
-}
-
-.points{
-font-size:18px;
-opacity:.9;
-}
-
-.owner{
-background:gold;
-color:black;
-display:inline-block;
-padding:8px 15px;
-border-radius:20px;
-font-weight:bold;
-margin-top:10px;
-}
-
-.bottom{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:#111827;
-display:flex;
-justify-content:space-around;
 padding:15px;
-font-size:20px;
+background:rgba(0,0,0,.2);
+display:flex;
+align-items:center;
+gap:10px;
+font-size:22px;
+font-weight:bold;
+}
+
+.avatar{
+width:45px;
+height:45px;
+border-radius:50%;
+background:white;
+color:black;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+}
+
+.chat-box{
+flex:1;
+padding:15px;
+overflow-y:auto;
+}
+
+.msg{
+max-width:70%;
+padding:12px;
+margin:10px 0;
+border-radius:15px;
+}
+
+.left{
+background:rgba(255,255,255,.2);
+text-align:left;
+}
+
+.right{
+background:white;
+color:#5b4bff;
+margin-left:auto;
+}
+
+.input-area{
+display:flex;
+padding:10px;
+background:rgba(0,0,0,.2);
+}
+
+.input-area input{
+flex:1;
+padding:12px;
+border:none;
+border-radius:20px;
+outline:none;
+}
+
+.input-area button{
+margin-left:10px;
+padding:12px 20px;
+border:none;
+border-radius:20px;
+background:white;
+color:#5b4bff;
+font-weight:bold;
 }
 </style>
 </head>
@@ -78,49 +91,33 @@ font-size:20px;
 <body>
 
 <div class="header">
-🏆 Leaderboard
+<div class="avatar">👤</div>
+<div>VIP KING 🟢</div>
 </div>
 
-<div class="rank-card top1">
-<h1>🥇 Rank #1</h1>
-<div class="name">EREN SARKAR</div>
-<div class="points">💎 50,000,000 Points</div>
-<div class="owner">👑 OWNER</div>
+<div class="chat-box">
+
+<div class="msg left">
+Hello 👋
 </div>
 
-<div class="rank-card top2">
-<h1>🥈 Rank #2</h1>
-<div class="name">VIP KING</div>
-<div class="points">💎 35,000,000 Points</div>
+<div class="msg right">
+Hi, welcome to InstaChat 🎤
 </div>
 
-<div class="rank-card top3">
-<h1>🥉 Rank #3</h1>
-<div class="name">ROYAL HOST</div>
-<div class="points">💎 25,000,000 Points</div>
+<div class="msg left">
+How are you?
 </div>
 
-<div class="rank-card">
-<h2>🔥 Weekly Ranking</h2>
-<p>#4 STAR BOY - 15M</p>
-<p>#5 QUEEN HOST - 12M</p>
-<p>#6 GAMER PRO - 10M</p>
+<div class="msg right">
+I'm good 😎
 </div>
 
-<div class="rank-card">
-<h2>🎁 Top Gifters</h2>
-<p>👑 EREN SARKAR - 100K Gifts</p>
-<p>💎 VIP KING - 80K Gifts</p>
-<p>🔥 ROYAL HOST - 50K Gifts</p>
 </div>
 
-<div style="height:80px"></div>
-
-<div class="bottom">
-<div>🏠 Home</div>
-<div>🎤 Rooms</div>
-<div>💬 Chat</div>
-<div>👤 Profile</div>
+<div class="input-area">
+<input type="text" placeholder="Type a message...">
+<button>Send</button>
 </div>
 
 </body>
