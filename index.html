@@ -3,195 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>InstaChat</title>
+<title>InstaChat Voice Room</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
 body{
-background:linear-gradient(135deg,#5b4bff,#7b61ff,#00c6ff);
-min-height:100vh;
-color:white;
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#5b4bff,#00c6ff);
+    color:white;
+    text-align:center;
 }
 
 .header{
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+    padding:15px;
+    font-size:24px;
+    font-weight:bold;
 }
 
-.logo{
-font-size:28px;
-font-weight:bold;
+.owner{
+    background:gold;
+    color:black;
+    padding:6px 12px;
+    border-radius:20px;
+    display:inline-block;
+    margin:10px;
+    font-weight:bold;
 }
 
-.vip{
-background:gold;
-color:black;
-padding:8px 15px;
-border-radius:20px;
-font-weight:bold;
+.controls{
+    margin:20px;
 }
 
-.hero{
-text-align:center;
-padding:30px 20px;
-}
-
-.hero h1{
-font-size:34px;
-margin-bottom:10px;
-}
-
-.hero p{
-opacity:.9;
-}
-
-.download-btn{
-display:inline-block;
-margin-top:20px;
-padding:14px 25px;
-background:white;
-color:#5b4bff;
-border-radius:30px;
-font-weight:bold;
-text-decoration:none;
-}
-
-.section{
-padding:20px;
-}
-
-.title{
-font-size:22px;
-margin-bottom:15px;
-font-weight:bold;
+select{
+    padding:10px;
+    border-radius:10px;
+    border:none;
+    font-size:16px;
 }
 
 .room{
-background:rgba(255,255,255,.15);
-backdrop-filter:blur(10px);
-padding:15px;
-border-radius:20px;
-margin-bottom:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    padding:20px;
+    max-width:500px;
+    margin:auto;
 }
 
-.join{
-background:#ff4d6d;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:20px;
-font-weight:bold;
+.seat{
+    background:rgba(255,255,255,0.15);
+    border-radius:15px;
+    padding:15px;
+    backdrop-filter:blur(10px);
 }
 
-.stats{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-padding:20px;
-}
-
-.card{
-background:rgba(255,255,255,.15);
-padding:15px;
-border-radius:15px;
-text-align:center;
+.host{
+    background:rgba(255,215,0,0.3);
+    margin:20px auto;
+    width:120px;
+    padding:15px;
+    border-radius:20px;
 }
 
 .bottom{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:#111827;
-display:flex;
-justify-content:space-around;
-padding:15px;
-}
-
-.bottom div{
-text-align:center;
-font-size:14px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#111827;
+    display:flex;
+    justify-content:space-around;
+    padding:15px;
 }
 </style>
 </head>
-
 <body>
 
-<div class="header">
-<div class="logo">🎤 InstaChat</div>
-<div class="vip">VIP</div>
+<div class="header">🎤 InstaChat Voice Room</div>
+
+<div class="owner">👑 OWNER</div>
+
+<div class="host">
+    👑 Host Seat
 </div>
 
-<div class="hero">
-<h1>Live Voice Chat Rooms</h1>
-<p>Meet New Friends & Join Live Conversations</p>
-<a href="#" class="download-btn">Download App</a>
+<div class="controls">
+    <select id="seatCount" onchange="generateSeats()">
+        <option value="8">8 Seats</option>
+        <option value="9">9 Seats</option>
+        <option value="12">12 Seats</option>
+        <option value="15">15 Seats</option>
+        <option value="20">20 Seats</option>
+    </select>
 </div>
 
-<div class="stats">
-<div class="card">
-<h2>10K+</h2>
-<p>Users</p>
-</div>
-
-<div class="card">
-<h2>500+</h2>
-<p>Rooms</p>
-</div>
-
-<div class="card">
-<h2>24/7</h2>
-<p>Online</p>
-</div>
-</div>
-
-<div class="section">
-<div class="title">🔥 Trending Rooms</div>
-
-<div class="room">
-<span>🎵 Music Room</span>
-<button class="join">Join</button>
-</div>
-
-<div class="room">
-<span>🎮 Gaming Room</span>
-<button class="join">Join</button>
-</div>
-
-<div class="room">
-<span>😂 Fun Room</span>
-<button class="join">Join</button>
-</div>
-
-<div class="room">
-<span>💘 Dating Room</span>
-<button class="join">Join</button>
-</div>
-
-<div class="room">
-<span>🌍 Global Chat</span>
-<button class="join">Join</button>
-</div>
-
-</div>
+<div class="room" id="room"></div>
 
 <div class="bottom">
-<div>🏠<br>Home</div>
-<div>🎤<br>Rooms</div>
-<div>💬<br>Chat</div>
-<div>👤<br>Profile</div>
+    <div>🎁 Gift</div>
+    <div>💬 Chat</div>
+    <div>🎤 Mic</div>
+    <div>🚪 Leave</div>
 </div>
+
+<script>
+function generateSeats(){
+    const count = document.getElementById("seatCount").value;
+    const room = document.getElementById("room");
+
+    room.innerHTML = "";
+
+    for(let i=1;i<=count;i++){
+        room.innerHTML += `
+        <div class="seat">
+            🎙️<br>
+            Seat ${i}
+        </div>`;
+    }
+}
+
+generateSeats();
+</script>
 
 </body>
 </html>
