@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>InstaChat Gift Shop</title>
+<title>InstaChat Ranking</title>
 
 <style>
 body{
@@ -16,48 +15,50 @@ text-align:center;
 }
 
 .header{
-padding:20px;
-font-size:30px;
-font-weight:bold;
-}
-
-.wallet{
-background:rgba(255,255,255,.15);
-margin:20px;
-padding:20px;
-border-radius:20px;
-}
-
-.coins{
+padding:25px;
 font-size:35px;
 font-weight:bold;
-color:gold;
 }
 
-.shop{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-padding:20px;
-}
-
-.gift{
+.rank-card{
 background:rgba(255,255,255,.15);
+margin:15px;
 padding:20px;
 border-radius:20px;
+backdrop-filter:blur(10px);
 }
 
-.gift h2{
-margin:10px 0;
+.top1{
+border:3px solid gold;
 }
 
-.btn{
-background:white;
-color:#5b4bff;
-border:none;
-padding:10px 15px;
+.top2{
+border:3px solid silver;
+}
+
+.top3{
+border:3px solid #cd7f32;
+}
+
+.name{
+font-size:25px;
+font-weight:bold;
+margin-top:10px;
+}
+
+.points{
+font-size:18px;
+opacity:.9;
+}
+
+.owner{
+background:gold;
+color:black;
+display:inline-block;
+padding:8px 15px;
 border-radius:20px;
 font-weight:bold;
+margin-top:10px;
 }
 
 .bottom{
@@ -69,59 +70,51 @@ background:#111827;
 display:flex;
 justify-content:space-around;
 padding:15px;
+font-size:20px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">🎁 Gift Shop</div>
-
-<div class="wallet">
-<h3>💰 Coin Wallet</h3>
-<div class="coins">1,500,000</div>
-<p>Available Coins</p>
+<div class="header">
+🏆 Leaderboard
 </div>
 
-<div class="shop">
-
-<div class="gift">
-<h2>🌹 Rose</h2>
-<p>100 Coins</p>
-<button class="btn">Send Gift</button>
+<div class="rank-card top1">
+<h1>🥇 Rank #1</h1>
+<div class="name">EREN SARKAR</div>
+<div class="points">💎 50,000,000 Points</div>
+<div class="owner">👑 OWNER</div>
 </div>
 
-<div class="gift">
-<h2>❤️ Heart</h2>
-<p>500 Coins</p>
-<button class="btn">Send Gift</button>
+<div class="rank-card top2">
+<h1>🥈 Rank #2</h1>
+<div class="name">VIP KING</div>
+<div class="points">💎 35,000,000 Points</div>
 </div>
 
-<div class="gift">
-<h2>👑 Crown</h2>
-<p>10,000 Coins</p>
-<button class="btn">Send Gift</button>
+<div class="rank-card top3">
+<h1>🥉 Rank #3</h1>
+<div class="name">ROYAL HOST</div>
+<div class="points">💎 25,000,000 Points</div>
 </div>
 
-<div class="gift">
-<h2>🚗 Car</h2>
-<p>100,000 Coins</p>
-<button class="btn">Send Gift</button>
+<div class="rank-card">
+<h2>🔥 Weekly Ranking</h2>
+<p>#4 STAR BOY - 15M</p>
+<p>#5 QUEEN HOST - 12M</p>
+<p>#6 GAMER PRO - 10M</p>
 </div>
 
-<div class="gift">
-<h2>✈️ Jet</h2>
-<p>500,000 Coins</p>
-<button class="btn">Send Gift</button>
+<div class="rank-card">
+<h2>🎁 Top Gifters</h2>
+<p>👑 EREN SARKAR - 100K Gifts</p>
+<p>💎 VIP KING - 80K Gifts</p>
+<p>🔥 ROYAL HOST - 50K Gifts</p>
 </div>
 
-<div class="gift">
-<h2>🏰 Castle</h2>
-<p>1,500,000 Coins</p>
-<button class="btn">Send Gift</button>
-</div>
-
-</div>
+<div style="height:80px"></div>
 
 <div class="bottom">
 <div>🏠 Home</div>
