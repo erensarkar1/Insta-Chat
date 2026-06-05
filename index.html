@@ -1,129 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>InstaChat Voice Room</title>
+<title>InstaChat Profile</title>
 
 <style>
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#5b4bff,#00c6ff);
-    color:white;
-    text-align:center;
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#5b4bff,#00c6ff);
+color:white;
+text-align:center;
 }
 
-.header{
-    padding:15px;
-    font-size:24px;
-    font-weight:bold;
+.profile{
+padding:30px 20px;
+}
+
+.avatar{
+width:120px;
+height:120px;
+border-radius:50%;
+background:rgba(255,255,255,.2);
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:60px;
+border:4px solid gold;
+}
+
+.name{
+font-size:28px;
+font-weight:bold;
+margin-top:15px;
+}
+
+.badge{
+display:inline-block;
+padding:8px 15px;
+border-radius:20px;
+margin:5px;
+font-weight:bold;
 }
 
 .owner{
-    background:gold;
-    color:black;
-    padding:6px 12px;
-    border-radius:20px;
-    display:inline-block;
-    margin:10px;
-    font-weight:bold;
+background:gold;
+color:black;
 }
 
-.controls{
-    margin:20px;
+.vip{
+background:#ff4dff;
 }
 
-select{
-    padding:10px;
-    border-radius:10px;
-    border:none;
-    font-size:16px;
+.stats{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:25px;
+flex-wrap:wrap;
 }
 
-.room{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-    padding:20px;
-    max-width:500px;
-    margin:auto;
+.card{
+background:rgba(255,255,255,.15);
+padding:15px;
+border-radius:15px;
+width:130px;
 }
 
-.seat{
-    background:rgba(255,255,255,0.15);
-    border-radius:15px;
-    padding:15px;
-    backdrop-filter:blur(10px);
+.buttons{
+margin-top:25px;
 }
 
-.host{
-    background:rgba(255,215,0,0.3);
-    margin:20px auto;
-    width:120px;
-    padding:15px;
-    border-radius:20px;
+.btn{
+display:inline-block;
+padding:12px 20px;
+margin:5px;
+border-radius:25px;
+background:white;
+color:#5b4bff;
+font-weight:bold;
+text-decoration:none;
 }
 
 .bottom{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    background:#111827;
-    display:flex;
-    justify-content:space-around;
-    padding:15px;
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#111827;
+display:flex;
+justify-content:space-around;
+padding:15px;
 }
 </style>
 </head>
+
 <body>
 
-<div class="header">🎤 InstaChat Voice Room</div>
+<div class="profile">
 
-<div class="owner">👑 OWNER</div>
+<div class="avatar">👤</div>
 
-<div class="host">
-    👑 Host Seat
+<div class="name">EREN SARKAR</div>
+
+<div>
+<span class="badge owner">👑 OWNER</span>
+<span class="badge vip">💎 VIP DIAMOND</span>
 </div>
 
-<div class="controls">
-    <select id="seatCount" onchange="generateSeats()">
-        <option value="8">8 Seats</option>
-        <option value="9">9 Seats</option>
-        <option value="12">12 Seats</option>
-        <option value="15">15 Seats</option>
-        <option value="20">20 Seats</option>
-    </select>
+<div class="stats">
+
+<div class="card">
+<h3>1.5M</h3>
+<p>Coins</p>
 </div>
 
-<div class="room" id="room"></div>
+<div class="card">
+<h3>5000</h3>
+<p>Followers</p>
+</div>
+
+<div class="card">
+<h3>250</h3>
+<p>Gifts</p>
+</div>
+
+<div class="card">
+<h3>99</h3>
+<p>Level</p>
+</div>
+
+</div>
+
+<div class="buttons">
+<a href="#" class="btn">✏ Edit Profile</a>
+<a href="#" class="btn">🎁 Gifts</a>
+</div>
+
+</div>
 
 <div class="bottom">
-    <div>🎁 Gift</div>
-    <div>💬 Chat</div>
-    <div>🎤 Mic</div>
-    <div>🚪 Leave</div>
+<div>🏠 Home</div>
+<div>🎤 Rooms</div>
+<div>💬 Chat</div>
+<div>👤 Profile</div>
 </div>
-
-<script>
-function generateSeats(){
-    const count = document.getElementById("seatCount").value;
-    const room = document.getElementById("room");
-
-    room.innerHTML = "";
-
-    for(let i=1;i<=count;i++){
-        room.innerHTML += `
-        <div class="seat">
-            🎙️<br>
-            Seat ${i}
-        </div>`;
-    }
-}
-
-generateSeats();
-</script>
 
 </body>
 </html>
