@@ -1,97 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>InstaChat Admin Login</title>
-
-<style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#5b4bff,#00c6ff);
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
-}
-
-.login-box{
-width:90%;
-max-width:350px;
-background:rgba(255,255,255,0.15);
-padding:25px;
-border-radius:20px;
-text-align:center;
-}
-
-h2{
-margin-bottom:20px;
-}
-
-input{
-width:90%;
-padding:12px;
-margin:10px 0;
-border:none;
-border-radius:10px;
-}
-
-button{
-padding:12px 25px;
-border:none;
-border-radius:25px;
-background:gold;
-font-weight:bold;
-cursor:pointer;
-}
-
-.owner{
-display:inline-block;
-background:gold;
-color:black;
-padding:8px 15px;
-border-radius:20px;
-font-weight:bold;
-margin-bottom:15px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="login-box">
-
-<div class="owner">👑 OWNER LOGIN</div>
-
-<h2>Admin Panel</h2>
-
-<input type="text" id="user" placeholder="Username">
-
-<input type="password" id="pass" placeholder="Password">
-
-<br><br>
-
-<button onclick="login()">Login</button>
-
-</div>
-
-<script>
-
 function login(){
 
 let username =
-document.getElementById("user").value;
+document.getElementById("user").value.trim();
 
 let password =
-document.getElementById("pass").value;
+document.getElementById("pass").value.trim();
 
-if(username==="EREN" && password==="OWNER123"){
+if(username === "EREN" &&
+password === "OWNER123"){
 
 alert("Login Success");
-
-window.location.href="admin.html";
+window.location.href = "admin.html";
 
 }else{
 
@@ -100,8 +19,3 @@ alert("Wrong Username or Password");
 }
 
 }
-
-</script>
-
-</body>
-</html>
