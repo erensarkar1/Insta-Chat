@@ -3,129 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>InstaChat Admin Panel</title>
+<title>InstaChat Admin Login</title>
 
 <style>
 body{
 margin:0;
 font-family:Arial,sans-serif;
 background:linear-gradient(135deg,#5b4bff,#00c6ff);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 color:white;
+}
+
+.login-box{
+width:90%;
+max-width:350px;
+background:rgba(255,255,255,0.15);
+padding:25px;
+border-radius:20px;
 text-align:center;
 }
 
-.header{
-padding:20px;
-font-size:32px;
+h2{
+margin-bottom:20px;
+}
+
+input{
+width:90%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:25px;
+background:gold;
 font-weight:bold;
+cursor:pointer;
 }
 
 .owner{
 display:inline-block;
 background:gold;
 color:black;
-padding:10px 20px;
-border-radius:25px;
-font-weight:bold;
-margin-bottom:20px;
-}
-
-.card{
-background:rgba(255,255,255,.15);
-margin:15px;
-padding:20px;
-border-radius:20px;
-}
-
-input,select{
-width:90%;
-padding:12px;
-margin:8px 0;
-border:none;
-border-radius:10px;
-}
-
-button{
-padding:12px 20px;
-border:none;
+padding:8px 15px;
 border-radius:20px;
 font-weight:bold;
-margin:5px;
-background:white;
-color:#5b4bff;
-}
-
-.bottom{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:#111827;
-display:flex;
-justify-content:space-around;
-padding:15px;
+margin-bottom:15px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">🛡️ Admin Panel</div>
+<div class="login-box">
 
-<div class="owner">👑 OWNER ACCESS</div>
+<div class="owner">👑 OWNER LOGIN</div>
 
-<div class="card">
-<h2>💰 Coin Management</h2>
-<input type="text" placeholder="User ID">
-<input type="number" placeholder="Coins">
-<br>
-<button>Add Coins</button>
-<button>Remove Coins</button>
+<h2>Admin Panel</h2>
+
+<input type="text" id="user" placeholder="Username">
+
+<input type="password" id="pass" placeholder="Password">
+
+<br><br>
+
+<button onclick="login()">Login</button>
+
 </div>
 
-<div class="card">
-<h2>💎 VIP Management</h2>
-<input type="text" placeholder="User ID">
-<select>
-<option>VIP Silver</option>
-<option>VIP Gold</option>
-<option>VIP Diamond</option>
-</select>
-<br>
-<button>Activate VIP</button>
-</div>
+<script>
 
-<div class="card">
-<h2>🎤 Room Management</h2>
-<input type="text" placeholder="Room Name">
-<br>
-<button>Create Room</button>
-<button>Delete Room</button>
-</div>
+function login(){
 
-<div class="card">
-<h2>🚫 User Control</h2>
-<input type="text" placeholder="User ID">
-<br>
-<button>Ban User</button>
-<button>Unban User</button>
-</div>
+let username =
+document.getElementById("user").value;
 
-<div class="card">
-<h2>📊 System Stats</h2>
-<p>👥 Users: 10,000+</p>
-<p>🎤 Rooms: 500+</p>
-<p>💎 VIP Users: 2,000+</p>
-</div>
+let password =
+document.getElementById("pass").value;
 
-<div style="height:80px"></div>
+if(username==="EREN" && password==="OWNER123"){
 
-<div class="bottom">
-<div>🏠 Home</div>
-<div>🎤 Rooms</div>
-<div>💬 Chat</div>
-<div>👤 Profile</div>
-</div>
+alert("Login Success");
+
+window.location.href="admin.html";
+
+}else{
+
+alert("Wrong Username or Password");
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
