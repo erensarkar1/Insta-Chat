@@ -1,3 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InstaChat Login</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#5b4bff,#00c6ff);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.login-box{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+width:300px;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+h2{
+color:#333;
+}
+
+input{
+width:90%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:10px;
+}
+
+button{
+padding:12px;
+width:100%;
+border:none;
+background:#5b4bff;
+color:white;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+opacity:0.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+<h2>👑 InstaChat Admin Login</h2>
+
+<input type="text" id="user" placeholder="Username">
+
+<input type="password" id="pass" placeholder="Password">
+
+<button onclick="login()">Login</button>
+</div>
+
+<script>
 function login(){
 
 let username =
@@ -19,3 +88,7 @@ alert("Wrong Username or Password");
 }
 
 }
+</script>
+
+</body>
+</html>
