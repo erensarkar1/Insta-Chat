@@ -1,12 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>InstaChat Admin Panel</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#5b4bff,#00c6ff);
+color:white;
+text-align:center;
+}
+
+.header{
+padding:25px;
+font-size:32px;
+font-weight:bold;
+}
+
+.owner{
+display:inline-block;
+background:gold;
+color:black;
+padding:10px 20px;
+border-radius:25px;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+.card{
+background:rgba(255,255,255,.15);
+margin:15px;
+padding:20px;
+border-radius:20px;
+}
+
+button{
+padding:12px 20px;
+border:none;
+border-radius:20px;
+font-weight:bold;
+margin:5px;
+cursor:pointer;
+}
+
+.ban{background:red;color:white;}
+.vip{background:gold;color:black;}
+.coin{background:lime;color:black;}
+</style>
 </head>
+
 <body>
 
-<h1>👑 Admin Panel</h1>
-<p>Welcome Owner</p>
+<div class="header">👑 InstaChat Admin Panel</div>
+
+<div class="owner">🏆 OWNER : EREN SARKAR</div>
+
+<div class="card">
+<h2>📊 App Statistics</h2>
+<p>Total Users: 5000</p>
+<p>Online Users: 350</p>
+<p>VIP Users: 120</p>
+</div>
+
+<div class="card">
+<h2>👤 User Management</h2>
+<input type="text" placeholder="User ID">
+<br><br>
+
+<button class="ban">Ban User</button>
+<button class="vip">Give VIP</button>
+<button class="coin">Add Coins</button>
+</div>
+
+<div class="card">
+<h2>🎁 Gift Control</h2>
+<p>Manage Gifts & Rewards</p>
+<button class="vip">Update Gifts</button>
+</div>
+
+<div class="card">
+<h2>💎 VIP Control</h2>
+<p>Manage VIP Plans</p>
+<button class="vip">Edit VIP</button>
+</div>
 
 </body>
 </html>
