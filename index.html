@@ -1,13 +1,196 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>InstaChat</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#4e54c8,#8f94fb);
+color:white;
+min-height:100vh;
+padding-bottom:80px;
+}
+
+.header{
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+
+.vip{
+background:gold;
+color:black;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+}
+
+.banner{
+padding:30px 20px;
+text-align:center;
+}
+
+.banner h1{
+font-size:34px;
+margin-bottom:10px;
+}
+
+.banner p{
+opacity:.9;
+}
+
+.download-btn{
+display:inline-block;
+margin-top:20px;
+background:#ff4d6d;
+padding:12px 25px;
+border-radius:30px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.section{
+padding:20px;
+}
+
+.section h2{
+margin-bottom:15px;
+}
+
+.room{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+border-radius:18px;
+padding:15px;
+margin-bottom:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.join{
+background:#ff4d6d;
+border:none;
+color:white;
+padding:10px 18px;
+border-radius:20px;
+font-weight:bold;
+}
+
+.stats{
+display:flex;
+justify-content:space-around;
+padding:20px;
+}
+
+.card{
+background:rgba(255,255,255,.15);
+padding:15px;
+border-radius:15px;
+width:30%;
+text-align:center;
+}
+
+.bottom{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#111827;
+display:flex;
+justify-content:space-around;
+padding:15px 0;
+}
+
+.bottom div{
+font-size:14px;
+}
+</style>
 </head>
-<body style="font-family:Arial;background:#0b1020;color:white;text-align:center;padding:50px;">
-<h1>InstaChat</h1>
-<p>Official Download Page</p>
-<p>Android & iPhone Downloads</p>
+
+<body>
+
+<div class="header">
+<div class="logo">🎤 InstaChat</div>
+<div class="vip">VIP</div>
+</div>
+
+<div class="banner">
+<h1>Live Voice Chat Rooms</h1>
+<p>Talk • Chat • Make Friends</p>
+<a href="#" class="download-btn">Download App</a>
+</div>
+
+<div class="stats">
+<div class="card">
+<h3>10K+</h3>
+<p>Users</p>
+</div>
+
+<div class="card">
+<h3>500+</h3>
+<p>Rooms</p>
+</div>
+
+<div class="card">
+<h3>24/7</h3>
+<p>Online</p>
+</div>
+</div>
+
+<div class="section">
+<h2>🔥 Trending Rooms</h2>
+
+<div class="room">
+<span>🎵 Music Room</span>
+<button class="join">Join</button>
+</div>
+
+<div class="room">
+<span>🎮 Gaming Room</span>
+<button class="join">Join</button>
+</div>
+
+<div class="room">
+<span>😂 Fun Room</span>
+<button class="join">Join</button>
+</div>
+
+<div class="room">
+<span>💘 Dating Room</span>
+<button class="join">Join</button>
+</div>
+
+</div>
+
+<div class="section">
+<h2>👑 VIP Features</h2>
+<p>Exclusive Rooms • Profile Badge • Entry Effects • Premium Support</p>
+</div>
+
+<div class="bottom">
+<div>🏠 Home</div>
+<div>🎤 Rooms</div>
+<div>💬 Chat</div>
+<div>🎁 Gifts</div>
+<div>👤 Profile</div>
+</div>
+
 </body>
 </html>
