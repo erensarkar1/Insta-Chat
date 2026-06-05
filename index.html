@@ -14,10 +14,9 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#4e54c8,#8f94fb);
-color:white;
+background:linear-gradient(135deg,#5b4bff,#7b61ff,#00c6ff);
 min-height:100vh;
-padding-bottom:80px;
+color:white;
 }
 
 .header{
@@ -40,44 +39,46 @@ border-radius:20px;
 font-weight:bold;
 }
 
-.banner{
-padding:30px 20px;
+.hero{
 text-align:center;
+padding:30px 20px;
 }
 
-.banner h1{
+.hero h1{
 font-size:34px;
 margin-bottom:10px;
 }
 
-.banner p{
+.hero p{
 opacity:.9;
 }
 
 .download-btn{
 display:inline-block;
 margin-top:20px;
-background:#ff4d6d;
-padding:12px 25px;
+padding:14px 25px;
+background:white;
+color:#5b4bff;
 border-radius:30px;
-color:white;
-text-decoration:none;
 font-weight:bold;
+text-decoration:none;
 }
 
 .section{
 padding:20px;
 }
 
-.section h2{
+.title{
+font-size:22px;
 margin-bottom:15px;
+font-weight:bold;
 }
 
 .room{
 background:rgba(255,255,255,.15);
 backdrop-filter:blur(10px);
-border-radius:18px;
 padding:15px;
+border-radius:20px;
 margin-bottom:15px;
 display:flex;
 justify-content:space-between;
@@ -86,16 +87,17 @@ align-items:center;
 
 .join{
 background:#ff4d6d;
-border:none;
 color:white;
-padding:10px 18px;
+border:none;
+padding:10px 20px;
 border-radius:20px;
 font-weight:bold;
 }
 
 .stats{
-display:flex;
-justify-content:space-around;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
 padding:20px;
 }
 
@@ -103,7 +105,6 @@ padding:20px;
 background:rgba(255,255,255,.15);
 padding:15px;
 border-radius:15px;
-width:30%;
 text-align:center;
 }
 
@@ -115,10 +116,11 @@ width:100%;
 background:#111827;
 display:flex;
 justify-content:space-around;
-padding:15px 0;
+padding:15px;
 }
 
 .bottom div{
+text-align:center;
 font-size:14px;
 }
 </style>
@@ -131,31 +133,31 @@ font-size:14px;
 <div class="vip">VIP</div>
 </div>
 
-<div class="banner">
+<div class="hero">
 <h1>Live Voice Chat Rooms</h1>
-<p>Talk • Chat • Make Friends</p>
+<p>Meet New Friends & Join Live Conversations</p>
 <a href="#" class="download-btn">Download App</a>
 </div>
 
 <div class="stats">
 <div class="card">
-<h3>10K+</h3>
+<h2>10K+</h2>
 <p>Users</p>
 </div>
 
 <div class="card">
-<h3>500+</h3>
+<h2>500+</h2>
 <p>Rooms</p>
 </div>
 
 <div class="card">
-<h3>24/7</h3>
+<h2>24/7</h2>
 <p>Online</p>
 </div>
 </div>
 
 <div class="section">
-<h2>🔥 Trending Rooms</h2>
+<div class="title">🔥 Trending Rooms</div>
 
 <div class="room">
 <span>🎵 Music Room</span>
@@ -177,19 +179,18 @@ font-size:14px;
 <button class="join">Join</button>
 </div>
 
+<div class="room">
+<span>🌍 Global Chat</span>
+<button class="join">Join</button>
 </div>
 
-<div class="section">
-<h2>👑 VIP Features</h2>
-<p>Exclusive Rooms • Profile Badge • Entry Effects • Premium Support</p>
 </div>
 
 <div class="bottom">
-<div>🏠 Home</div>
-<div>🎤 Rooms</div>
-<div>💬 Chat</div>
-<div>🎁 Gifts</div>
-<div>👤 Profile</div>
+<div>🏠<br>Home</div>
+<div>🎤<br>Rooms</div>
+<div>💬<br>Chat</div>
+<div>👤<br>Profile</div>
 </div>
 
 </body>
